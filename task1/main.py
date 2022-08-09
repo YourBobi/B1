@@ -27,8 +27,10 @@ def task3():
     3. Импорт в СУБД SQLITE
     :return:None
     """
-    # создание таблицы
+    # создание таблицы и бд
     create_table1()
+
+    # Запись
     content = FileManager(link_from="./txt_files", link_to="./", file_name="test.txt")
     import_in_db(content=content.get_content())
 

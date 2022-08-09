@@ -1,0 +1,9 @@
+sqlalchemy
+# psycopg2
+tqdm
+
+
+django
+pandas
+datetime
+xlwt
