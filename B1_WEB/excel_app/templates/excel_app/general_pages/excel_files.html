@@ -1,0 +1,32 @@
+{% extends "excel_app/shared/base.html" %}
+
+{% block head %}
+{% endblock %}
+
+
+{% block content %}
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>
+        <label for="xls">Выберите файл для загрузки</label>
+        <input type="file" id="xls" name="xls"
+                    accept=".xls">
+    </div>
+    <div>
+
+        <button>Загрузить</button>
+    </div>
+</form>
+
+<label style="margin-top: 50px;">ФАЙЛЫ:</label>
+{% for file in files %}
+<div>
+    <a href="/excel/id={{file.id}}">
+        {{file.name}} -({{file.date}})
+    </a>
+
+</div>
+{% endfor %}
+
+{% endblock %}

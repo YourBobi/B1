@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
+
+    <link rel   ="stylesheet" type="text/css" href="{% static 'css/table.css' %}">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Title</title>
+    {% block head %}
+    {% endblock %}
+</head>
+
+<header>
+    <nav class="container1">
+        <a href="/">Home</a>
+        <a href="/excel">Excel</a>
+    </nav>
+</header>
+
+<body>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

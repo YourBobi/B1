@@ -1,0 +1,35 @@
+{% extends "excel_app/shared/base.html" %}
+{% load static %}
+{% block head %}
+<script src="{% static 'js/save.js' %}"></script>
+<script src="{% static 'js/xlsx.full.min.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container" style="opacity: 1;">
+    <div class="row" style="margin-top: 50px;">
+		<form method="post">
+			{% csrf_token %}
+            <a href="/{{excel_file}}" download="">
+                 <button class="btn btn-secondary my_button" >
+                    Save
+                 </button>
+            </a>
+		</form>
+
+        <div class="col-md-12">
+            <h1 class="text-center">
+                {{ content.0.file_id.name }}
+            </h1>
+        </div>
+        <div id="no-more-tables">
+
+			{{ data_html | safe }}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
